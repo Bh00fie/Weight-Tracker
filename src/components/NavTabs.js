@@ -27,12 +27,12 @@ function NavTabs() {
       </li>
       <li className="nav-item">
         <NavLink
-          to="blog"
+          to="calculator"
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
-          Blog
+          Calculator
         </NavLink>
       </li>
       <li className="nav-item">
