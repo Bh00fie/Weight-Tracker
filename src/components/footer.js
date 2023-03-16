@@ -11,7 +11,31 @@ function Footer() {
                 href="#!"
                 role="button">
                 <FaGithub/>
-                Bh00fie
+                Abhinandan Thour
+              </a>
+
+              <a
+                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                href="#!"
+                role="button">
+                <FaGithub/>
+                Dragos Purcaru
+              </a>
+
+              <a
+                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                href="#!"
+                role="button">
+                <FaGithub/>
+                Jakub Rzepinski
+              </a>
+
+              <a
+                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                href="#!"
+                role="button">
+                <FaGithub/>
+                Allen Cummins
               </a>
               
           {/* Copyright */}
