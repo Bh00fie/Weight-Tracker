@@ -8,7 +8,7 @@ function Footer() {
               {/* Github */}
               <a
                 className="btn btn-link btn-floating btn-lg text-dark m-1"
-                href="#!"
+                href="https://github.com/Bh00fie"
                 role="button">
                 <FaGithub/>
                 Abhinandan Thour
@@ -16,7 +16,7 @@ function Footer() {
 
               <a
                 className="btn btn-link btn-floating btn-lg text-dark m-1"
-                href="#!"
+                href="https://github.com/DrGoshD"
                 role="button">
                 <FaGithub/>
                 Dragos Purcaru
@@ -24,7 +24,7 @@ function Footer() {
 
               <a
                 className="btn btn-link btn-floating btn-lg text-dark m-1"
-                href="#!"
+                href="https://github.com/rzepa000"
                 role="button">
                 <FaGithub/>
                 Jakub Rzepinski
@@ -32,7 +32,7 @@ function Footer() {
 
               <a
                 className="btn btn-link btn-floating btn-lg text-dark m-1"
-                href="#!"
+                href="https://github.com/Allen-EC"
                 role="button">
                 <FaGithub/>
                 Allen Cummins
