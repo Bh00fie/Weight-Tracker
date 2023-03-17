@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavTabs from './components/NavTabs';
 import Home from './components/pages/Home';
-import Hero from './components/sections/Hero';
 import About from './components/pages/About';
 import Calculator from './components/pages/Calculator';
 import Contact from './components/pages/Contact';
@@ -23,8 +22,8 @@ function App() {
         </Routes>
       </div>
 
-      <Hero />
-      <Footer/>
+      <Home />
+      <Footer />
     </Router>
   );
 }
