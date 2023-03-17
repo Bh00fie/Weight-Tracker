@@ -1,6 +1,4 @@
 import React, {useRef} from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import Learn from './Learn';
 import emailjs from '@emailjs/browser';
 
 function Contact(props) {
