@@ -8,17 +8,22 @@ function Hero() {
 	return (
 		<>
 			<header className='header__section'>
-				<p className='header__text'>Have a sneak peak!</p>
+				<p className='header__text'>FitVid - role model!</p>
 			</header>
 			<Container maxWidth="md">
 				<div className='playerDiv'>
-				<ReactPlayer className='width=100%'
-				url={heroVideo}
-				playing={false}
-				muted={true}
-				controls={true}
+				<ReactPlayer 
+					className='playerDiv'
+					fluid={true}
+					width='100%'
+					height='100%'
+					url={heroVideo}
+					playing={false}
+					muted={false}
+					controls={true}
 				/>
 
+				
 				</div>
       		</Container>
 		</>		

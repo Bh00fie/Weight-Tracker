@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 4px;
     box-sizing: border-box;
   }
   
@@ -21,6 +21,9 @@
   }
 
   .playerDiv {
-    width: 100%;
+    height: auto !important;
+    width: auto;
+    aspect-ratio: 16/9;
     position: relative;
+    object-fit: fill;
   }
