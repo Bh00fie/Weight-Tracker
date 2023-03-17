@@ -1,6 +1,6 @@
 import React from "react";
 
-function About() {
+function Tracker() {
   return (
     <div>
       <h1>About Page</h1>
@@ -15,4 +15,4 @@ function About() {
   );
 }
 
-export default About;
+export default Tracker;
