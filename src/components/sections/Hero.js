@@ -1,28 +1,24 @@
 import React from 'react';
 import '../Hero.css';
 import ReactPlayer from 'react-player';
-import screenfull from 'screenfull';
 import Container from '@mui/material/Container';
 import heroVideo from './HeroVideo.mp4';
-import ControlIcons from '../ControlIcons.jsx';
 
 function Hero() {
 	return (
 		<>
-			<hero className='hero__section'>
-				<p className='hero__text'>Video</p>
-			</hero>
+			<header className='header__section'>
+				<p className='header__text'>Have a sneak peak!</p>
+			</header>
 			<Container maxWidth="md">
 				<div className='playerDiv'>
-				<ReactPlayer 
-				width={'100%'} 
-				height='100%' 
+				<ReactPlayer className='width=100%'
 				url={heroVideo}
-				playing
-				muted
-				controls
+				playing={false}
+				muted={true}
+				controls={true}
 				/>
-				<ControlIcons/>
+
 				</div>
       		</Container>
 		</>		

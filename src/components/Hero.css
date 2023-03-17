@@ -3,7 +3,7 @@
     box-sizing: border-box;
   }
   
-  .hero__section {
+  .header__section {
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
     background-color: rgb(70, 70, 172);
   }
   
-  .hero__text {
+  .header__text {
     color: white;
     font-size: 28px;
     font-weight: 800;
