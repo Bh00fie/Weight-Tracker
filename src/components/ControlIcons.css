@@ -27,3 +27,12 @@
     margin-top: -50px;
     margin-left: 130px;
 }
+
+.bottom__icons {
+    color:#999;
+}
+
+.bottom__icons:hover {
+    color: white;
+}
+
