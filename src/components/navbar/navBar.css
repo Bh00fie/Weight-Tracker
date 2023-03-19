@@ -6,3 +6,18 @@
 .icon .nav-link {
     padding: 0.31vh 1.25vh 0.2vh 1.25vh
 }
+
+.nav-tabs .nav-link {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5vh;
+}
+
+.nav-link {
+    color: white;
+    font-weight: 500;
+}
+
+.nav-tabs{
+    background-color: #303030;
+}
