@@ -16,6 +16,7 @@
 .nav-link {
     color: white;
     font-weight: 500;
+    --bs-nav-link-hover-color: orange;
 }
 
 .nav-tabs{
