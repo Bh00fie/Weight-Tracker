@@ -1,0 +1,20 @@
+footer {
+    margin: 1vh;
+    background-color: #303030;
+    border-radius: 2vh;
+    text-align: center;
+    padding-bottom: 0.25vh;
+}   
+
+.btn {
+    font-size: 2vh;
+}
+
+.copyright {
+    font-size: 1.5vh;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 2vh;
+    padding: 2vh;
+    margin: 1vh;
+}
