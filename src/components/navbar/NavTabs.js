@@ -6,7 +6,7 @@ import "./navBar.css"
 function NavTabs() {
   return (
     <ul className="nav nav-tabs">
-      <li className="nav-item">
+      <li className="nav-item icon">
         <NavLink
           to="/"
           end
