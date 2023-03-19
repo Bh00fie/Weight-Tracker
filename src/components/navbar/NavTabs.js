@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./navBar.css"
 
 function NavTabs() {
   return (
     <ul className="nav nav-tabs">
-      <li className="nav-item">
+      <li className="nav-item icon">
         <NavLink
           to="/"
           end
@@ -12,7 +14,7 @@ function NavTabs() {
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
-          Home
+        <img src={require('./icon.jpg')} alt="icon" className='iconImage'/>
         </NavLink>
       </li>
       <li className="nav-item">

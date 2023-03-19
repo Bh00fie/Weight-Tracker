@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavTabs from './components/NavTabs';
+import NavTabs from './components/navbar/NavTabs';
 import Home from './components/pages/Home';
 import Tracker from './components/pages/Tracker';
 import Calculator from './components/pages/Calculator';
