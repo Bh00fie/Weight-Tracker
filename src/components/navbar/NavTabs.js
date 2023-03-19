@@ -14,7 +14,7 @@ function NavTabs() {
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
-          Home
+        <img src={require('./icon.jpg')} alt="icon" className='iconImage'/>
         </NavLink>
       </li>
       <li className="nav-item">
