@@ -1,0 +1,38 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form, h1 {
+    text-align: center;
+}
+
+input, textarea {
+    width: 40%;
+    height: 3vw;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 1vh;
+}
+
+textarea {
+    height: 6vw;
+    max-height: 6vw;
+    min-height: 6vw;
+
+}
+
+label, .sendButton {
+    margin: 1.5vh 0 0 0;
+    font-weight: 500;
+    font-size: 2vh;
+}
+
+.sendButton {
+    width: 20%;
+    margin-bottom: 2vh;
+    background-color: orange;
+    color: white;
+}
