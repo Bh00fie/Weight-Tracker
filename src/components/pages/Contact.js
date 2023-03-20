@@ -17,7 +17,7 @@ function Contact(props) {
   };
 
   return (
-    <div>
+    <div className='formBox'>
       <h1>Get in touch with us:</h1>
       
       <form ref={form} onSubmit={sendEmail}>
@@ -27,7 +27,7 @@ function Contact(props) {
       <input type="email" name="user_email" />
       <label>Message</label>
       <textarea name="message" />
-      <input type="submit" value="Send" />
+      <input type="submit" value="Send" className='sendButton'/>
     </form>
     </div>
   );
