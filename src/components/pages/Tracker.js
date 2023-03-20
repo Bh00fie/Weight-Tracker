@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { UserData } from "../sections/linechart/Data";
 import LineChart from "../sections/linechart/LineChart";
+import "./tracker.css"
 
 function Tracker() {
 
@@ -27,7 +28,7 @@ function Tracker() {
   return (
     <div className="App">
       <h1>Weight Tracker</h1>
-      <div style={{ width: 700 }}>
+      <div className="lineChart" style={{ width: 700 }}>
         <LineChart chartData={userData} />
       </div>
     </div>
