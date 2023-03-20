@@ -9,3 +9,18 @@ form, h1 {
     text-align: center;
 }
 
+input, textarea {
+    width: 40%;
+    height: 3vw;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 1vh;
+}
+
+textarea {
+    height: 6vw;
+    max-height: 6vw;
+    min-height: 6vw;
+
+}
+
