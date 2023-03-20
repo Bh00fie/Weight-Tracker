@@ -9,6 +9,7 @@
     align-items: center;
     height: 40px;
     background-color: rgb(70, 70, 172);
+    border-radius: 10px;
   }
   
   .header__text {
