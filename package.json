@@ -23,6 +23,7 @@
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "screenfull": "^6.0.2",
+    "theme-ui": "^0.15.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

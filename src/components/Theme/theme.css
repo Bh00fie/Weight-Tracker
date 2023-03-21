@@ -1,0 +1,24 @@
+:root {
+    --body_background: white;
+    --body_color: black;
+    --link_color: purple;
+}
+
+[data-theme="dark"] {
+    --body_background: #282c34;
+    --body_color: white;
+    --link_color: cyan;
+}
+
+.App-header {
+    background-color: var(--body_background);
+    color: var(--body_color);
+}
+
+.App-link {
+    color: var(--link_color);
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+}

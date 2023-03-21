@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Hero.css';
+import '../Hero/Hero.css';
 import ReactPlayer from 'react-player';
 import Container from '@mui/material/Container';
 import heroVideo from './HeroVideo.mp4';

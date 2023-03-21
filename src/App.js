@@ -6,12 +6,14 @@ import Tracker from './components/pages/Tracker';
 import Calculator from './components/pages/Calculator';
 import Contact from './components/pages/Contact';
 import Footer from './components/footer/footer';
+// import DarkMode from "./components/Theme/theme";
 
 
 function App() {
   return (
     <Router>
       <div>
+        {/* <DarkMode /> */}
         <NavTabs />
 
         <Routes>
