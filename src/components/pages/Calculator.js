@@ -45,18 +45,18 @@ function Calculator() {
   
 
   return (
-    <div class="container">
-  <div class="row">
-    <div class="col-sm-12 border">
+    <div className="container">
+  <div className="row">
+    <div className="col-sm-12 border">
       <h1>Calorie Calculator</h1>
     </div>
-    <div class="col-sm-12 border">
+    <div className="col-sm-12 border">
     <p> To maintain: {weightloss} calories </p>
     <p> To lose 0.25 kg/week you have to consume: {mildloss} calories</p>
     <p>To lose 0.5 kg/week you have to consume: {loss} calories</p>
     <p> To lose 1 kg/week you have to consume: {extremeloss} calories</p>
     </div>
-    <div class="col-sm-12 border">
+    <div className="col-sm-12 border">
       <h4>Your diet:</h4>
     </div>
   </div>

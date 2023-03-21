@@ -4,6 +4,22 @@ import { UserData } from "../sections/linechart/Data";
 import LineChart from "../sections/linechart/LineChart";
 import "./tracker.css"
 
+const Userweight = () => {
+  return (
+    <form>
+      <div>
+        <label htmlFor="NewWeight">Weight:</label>
+        <input id="NewWeight" type="number" />
+      </div>
+      <div>
+        <label htmlFor="NewDate">Date</label>
+        <input id="NewDate" type="date" />
+      </div>
+      <button>Submit</button>
+    </form>
+  )
+};
+
 function Tracker() {
 
   const [userData, setUserData] = useState({
@@ -28,6 +44,19 @@ function Tracker() {
   return (
     <div className="App">
       <h1>Weight Tracker</h1>
+
+      <form>
+      <div>
+        <label htmlFor="NewWeight">Weight:</label>
+        <input id="NewWeight" type="number" />
+      </div>
+      <div>
+        <label htmlFor="NewDate">Date</label>
+        <input id="NewDate" type="date" />
+      </div>
+      <button>Submit</button>
+    </form>
+
       <div className="lineChart" style={{ width: 700 }}>
         <LineChart chartData={userData} />
       </div>
