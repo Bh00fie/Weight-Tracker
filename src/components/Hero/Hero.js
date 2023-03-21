@@ -8,7 +8,7 @@ function Hero() {
 	return (
 		<>
 			<header className='header__section'>
-				<p className='header__text'>FitVid - role model!</p>
+				<p className='header__text'>Choose life!</p>
 			</header>
 			<Container maxWidth="md">
 				<div className='playerDiv'>
