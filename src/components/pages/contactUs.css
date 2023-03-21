@@ -12,27 +12,30 @@ form, h1 {
 input, textarea {
     width: 40%;
     height: 3vw;
-    border-radius: 20px;
+    border-radius: 2vw;
     border: 2px solid black;
-    padding: 1vh;
+    padding: 2vh;
+
 }
 
 textarea {
     height: 6vw;
     max-height: 6vw;
     min-height: 6vw;
-
 }
 
 label, .sendButton {
     margin: 1.5vh 0 0 0;
     font-weight: 500;
-    font-size: 2vh;
+    font-size: medium;
 }
 
 .sendButton {
     width: 20%;
+    height: 5vh;
     margin-bottom: 2vh;
     background-color: orange;
     color: white;
+    display: flex;
+    justify-content: center;
 }
