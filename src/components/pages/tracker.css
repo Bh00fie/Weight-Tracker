@@ -13,7 +13,9 @@
 }
 
 .submitButton {
+    width: 20%;
+    margin-bottom: 2vh;
     border-radius: 20px;
-    border: 2px solid black;
-    background-color: white;
+    background-color: orange;
+    color: white;
 }
