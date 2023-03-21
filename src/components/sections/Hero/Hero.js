@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Hero.css';
+import './Hero.css';
 import ReactPlayer from 'react-player';
 import Container from '@mui/material/Container';
 import heroVideo from './HeroVideo.mp4';
@@ -14,7 +14,7 @@ function Hero() {
 				<div className='playerDiv'>
 				<ReactPlayer 
 					className='playerDiv'
-					fluid={true}
+					fluid={"true"}
 					width='100%'
 					height='100%'
 					url={heroVideo}
