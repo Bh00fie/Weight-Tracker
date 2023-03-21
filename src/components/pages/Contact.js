@@ -27,7 +27,7 @@ function Contact(props) {
       <input type="email" name="user_email" />
       <label>Message</label>
       <textarea name="message" />
-      <input type="submit" value="Send" className='sendButton'/>
+      <input type="submit" value="Send" className='sendButton'/> 
     </form>
     </div>
   );
