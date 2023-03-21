@@ -6,6 +6,7 @@ import Tracker from './components/pages/Tracker';
 import Calculator from './components/pages/Calculator';
 import Contact from './components/pages/Contact';
 import Footer from './components/footer/footer';
+import "./style.css"
 
 
 function App() {
