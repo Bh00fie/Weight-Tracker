@@ -32,3 +32,14 @@ footer {
         height: 4vh;
     }
   }
+
+@media screen and (max-width: 400px) {
+    .btn {
+        font-size: 1.25vh;
+    }
+
+    .copyright {
+        font-size: 1vh;
+        height: 2vh;
+    }
+}
