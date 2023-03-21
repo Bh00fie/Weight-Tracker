@@ -19,6 +19,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 6vh;
 }
 
 @media screen and (max-width: 800px) {
@@ -28,5 +29,6 @@ footer {
 
     .copyright {
         font-size: 1.25vh;
+        height: 4vh;
     }
   }
