@@ -45,4 +45,12 @@ label, .sendButton {
       width: 80%;
       height: 5vh;
     }
+    
+    textarea {
+        height: 10vh;
+        max-height: 10vh;
+        min-height: 10vh;
+        padding: 1vh 2vh;
+        }
+
   }
