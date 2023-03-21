@@ -39,3 +39,10 @@ label, .sendButton {
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 800px) {
+    input, textarea {
+      width: 80%;
+      height: 5vh;
+    }
+  }
