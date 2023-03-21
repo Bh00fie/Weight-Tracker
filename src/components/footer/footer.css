@@ -1,6 +1,7 @@
+
+
 footer {
     margin: 1vh;
-    background-color: #303030;
     border-radius: 2vh;
     text-align: center;
     padding-bottom: 0.25vh;
@@ -42,4 +43,14 @@ footer {
         font-size: 1vh;
         height: 2vh;
     }
+}
+
+body {
+    background-color: rgb(6, 26, 32);
+    color: rgb(10, 206, 131);
+}
+
+body {
+    background-color: rgb(6, 26, 32);
+    color: rgb(10, 206, 131);
 }
