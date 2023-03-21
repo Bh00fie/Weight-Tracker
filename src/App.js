@@ -13,13 +13,21 @@ function App() {
     <Router>
       <div>
         <NavTabs />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="tracker" element={<Tracker />} />
           <Route path="calculator" element={<Calculator />} />
           <Route path="contact/*" element={<Contact />} />
         </Routes>
+        
+          <div className='login'>
+            <h1>Login</h1>
+            <div className='container'>
+              <i className='top'></i>
+
+            </div>
+        </div>
+
       </div>
       
       <Footer />
