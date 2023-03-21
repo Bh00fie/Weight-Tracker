@@ -14,7 +14,7 @@ function Hero() {
 				<div className='playerDiv'>
 				<ReactPlayer 
 					className='playerDiv'
-					fluid={true}
+					fluid={"true"}
 					width='100%'
 					height='100%'
 					url={heroVideo}
