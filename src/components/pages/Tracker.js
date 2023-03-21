@@ -15,7 +15,7 @@ const Userweight = () => {
         <label htmlFor="NewDate">Date</label>
         <input id="NewDate" type="date" />
       </div>
-      <button>Submit</button>
+      <button className="submitButton" >Submit</button>
     </form>
   )
 };
@@ -46,15 +46,16 @@ function Tracker() {
       <h1>Weight Tracker</h1>
 
       <form>
-      <div>
+      <div className="weightInput">
         <label htmlFor="NewWeight">Weight:</label>
         <input id="NewWeight" type="number" />
       </div>
-      <div>
+      <div className="dateInput">
         <label htmlFor="NewDate">Date</label>
         <input id="NewDate" type="date" />
       </div>
-      <button>Submit</button>
+      <br></br>
+      <button className="submitButton">Submit</button>
     </form>
 
       <div className="lineChart" style={{ width: 700 }}>
@@ -65,5 +66,10 @@ function Tracker() {
   );
 }
 
+{/* <label htmlFor={'upload-button'}>
+    <div className={classes.chooseFile}>
+        <SomeIconElement style={{marginRight: 10}}/> Upload File
+    </div>
+</label> */}
 
 export default Tracker;
