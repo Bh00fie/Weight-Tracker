@@ -123,14 +123,15 @@ const Tracker = () => {
       </div>
       <table>
         <thead>
-          <tr>
+          <tr className="tableHeader">
             <th>Date</th>
             <th>Weight</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
           {weightData.map((data, index) => (
-            <tr key={index}>
+            <tr key={index} className="tableBody">
               <td>{data.date}</td>
               <td>{data.weight}</td>
               <td>
