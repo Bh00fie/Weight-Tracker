@@ -4,26 +4,39 @@ import { UserData } from "../sections/linechart/Data";
 import LineChart from "../sections/linechart/LineChart";
 import "./tracker.css"
 
-    
+const currentWeightData = {
+  weight:  "",
+  date: ""
+}    
+
+//const weightDataArray = [];
       
 
 const Tracker = () => {
+// eslint-disable-next-line
+    const [weightData, setWeightData] = useState(() => {
+    const savedWeightData = localStorage.getItem("weightData");
+    const initialValue = JSON.parse(savedWeightData);
+    return initialValue || "";
+  });
 
   const [weight, setWeight] = useState(() => {
     const savedWeight = localStorage.getItem("weight");
     const initialValue = JSON.parse(savedWeight);
     return initialValue || "";
   });
+
   const [date, setDate] = useState(() => {
     const savedDate = localStorage.getItem("date");
     const initialValue = JSON.parse(savedDate);
     return initialValue || "";
   });
+// eslint-disable-next-line
   const [userData, setUserData ] = useState({
     labels: UserData.map((data) => data.year),
     datasets: [
       {
-        label: "Users Gained",
+        label: "Weight Journey",
         data: UserData.map((data) => data.userGain),
         backgroundColor: [
           "rgba(75,192,192,1)",
@@ -32,7 +45,7 @@ const Tracker = () => {
           "#f3ba2f",
           "#2a71d0",
         ],
-        borderColor: "black",
+        borderColor: "blue",
         borderWidth: 2,
       },
     ],
@@ -40,18 +53,36 @@ const Tracker = () => {
 
   useEffect(() => {
     // storing input name
+    currentWeightData.weight = weight;
     localStorage.setItem("weight", JSON.stringify(weight));
   }, [weight]);
+  
   useEffect(() => {
     // storing input name
+    currentWeightData.date = date;
     localStorage.setItem("date", JSON.stringify(date));
   }, [date]);
+  
+  // submitData(() => {
+  //   //weightData.join(currentWeightData);
+  //   localStorage.setItem("weightData", JSON.stringify(currentWeightData));
+  // }, [weightData]);
+
+  function submitData() {
+    localStorage.clear();
+    if(currentWeightData.date === "" || currentWeightData.weight === "")
+    return;
+    
+    const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
+    weightDataArray.push(currentWeightData);
+    localStorage.setItem("weightData", JSON.stringify(weightDataArray));
+    
+  }
   
 
   return (
     <div className="App">
       <h1>Weight Tracker</h1>
-
       <form>
       <div className="weightInput">
         <label htmlFor="NewWeight">Weight:</label>
@@ -61,7 +92,6 @@ const Tracker = () => {
         onChange={(e) => setWeight(e.target.value)}
         placeholder=""
         />
-        {/* <input type="submit" value="Submit"></input> */}
       </div>
       <div className="dateInput">
         <label htmlFor="NewDate">Date</label>
@@ -73,7 +103,7 @@ const Tracker = () => {
         />
       </div>
       <br></br>
-      <button className="submitButton">Submit</button>
+      <button className="submitButton" onClick={submitData}>Submit</button>
     </form>
 
       <div className="lineChart" style={{ width: 700 }}>
@@ -83,11 +113,5 @@ const Tracker = () => {
 
   );
 };
-
-// {/* <label htmlFor={'upload-button'}>
-//     <div className={classes.chooseFile}>
-//         <SomeIconElement style={{marginRight: 10}}/> Upload File
-//     </div>
-// </label> */}
 
 export default Tracker;
