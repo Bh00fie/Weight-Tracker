@@ -23,7 +23,7 @@ function Contact(props) {
     <div className='contactContainer'>
       {isEmailSent ? (
         <div className='confirmationMessage'>
-          <p>Email sent successfully!</p>
+          <p>Email sent successfully! ✅</p>
         </div>
       ) : (
         <form ref={form} onSubmit={sendEmail}>
