@@ -41,6 +41,13 @@ label, .sendButton {
     justify-content: center;
 }
 
+.confirmationMessage {
+    font-size: 5vh;
+    text-align: center;
+    margin-top: 10vh ;
+}
+
+
 @media screen and (max-width: 800px) {
     input, textarea {
       width: 80%;
