@@ -2,6 +2,7 @@ import { Grid } from 'gridjs-react';
 import React from "react";
 
 
+
 function CalcGrid() {
     
       const weight=80;
@@ -46,10 +47,10 @@ function CalcGrid() {
         extremeloss=weightloss*0.67;
       }
     const data= [
-        ['0kg/week (maintain)', weightloss.toFixed(2)],
-        ['0.25kg/week', mildloss.toFixed(2)],
-        ['0.5kg/week', loss.toFixed(2)],
-        ['1kg/week', extremeloss.toFixed(2)]
+        ['0kg/week (maintain)', weightloss.toFixed()],
+        ['0.25kg/week', mildloss.toFixed()],
+        ['0.5kg/week', loss.toFixed()],
+        ['1kg/week', extremeloss.toFixed()]
       ]
     const style= {
         container: {
@@ -87,6 +88,7 @@ function CalcGrid() {
             summary: false
           }}
         />
+        
       </div>
     );
   }
