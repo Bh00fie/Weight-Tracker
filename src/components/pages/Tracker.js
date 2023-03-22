@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { UserData } from "../sections/Linechart/Data";
-import LineChart from "../sections/Linechart/LineChart";
+import { UserData } from "../sections/linechart/Data";
+import LineChart from "../sections/linechart/LineChart";
 import "./tracker.css"
 
 function Tracker() {

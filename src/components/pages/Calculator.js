@@ -37,11 +37,20 @@ function Calculator() {
     <div class="recipes col-sm-12 border rounded">
     <div className="App">
       <section className="controls">
-        <input
+        {/* <input
           type="number"
           placeholder="Input calories for your desired weight loss"
           onChange={handleChange}
-        />
+        /> */}
+        <label>
+          Pick your diet calories:
+          <select onChange={handleChange}>            
+            <option value="1500">1500</option>
+            <option value="2000">2000</option>
+            <option value="3000">3000</option>
+            <option value="4000">4000</option>
+          </select>
+        </label>
         <button onClick={getMealData}>Get Daily Meal Plan</button>
       </section>
       {mealData && <MealList mealData={mealData} />}
