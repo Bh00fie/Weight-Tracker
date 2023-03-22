@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 import CalcGrid from "../sections/CalcGrid/CalcGrid";
 import MealList from "../sections/mealPlan/mealdata";
+import "./calculator.css";
 
 function Calculator() {
   const [mealData, setMealData] = useState(null);
@@ -42,7 +43,10 @@ function Calculator() {
             placeholder="Input calories for your desired weight loss"
             onChange={handleChange}
           />
-          <button onClick={getMealData}>Get Daily Meal Plan</button>
+          <button 
+          onClick={getMealData} 
+          id="mealBtn"
+          >Get Daily Meal Plan</button>
         </section>
         {mealData && <MealList mealData={mealData} />}
       </div>
