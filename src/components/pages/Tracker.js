@@ -1,16 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { UserData } from "../sections/linechart/Data";
 import LineChart from "../sections/linechart/LineChart";
 import "./tracker.css"
+
 
 const currentWeightData = {
   weight:  "",
   date: ""
 }    
-
-//const weightDataArray = [];
-      
 
 const Tracker = () => {
 // eslint-disable-next-line
@@ -31,13 +28,16 @@ const Tracker = () => {
     const initialValue = JSON.parse(savedDate);
     return initialValue || "";
   });
-// eslint-disable-next-line
-  const [userData, setUserData ] = useState({
-    labels: UserData.map((data) => data.year),
+
+  const ChartData = JSON.parse(localStorage.getItem("weightData")) || [];
+
+  // eslint-disable-next-line
+  const [newChartData, setChartData ] = useState({
+    labels: ChartData.map((data) => data.date),
     datasets: [
       {
         label: "Weight Journey",
-        data: UserData.map((data) => data.userGain),
+        data: ChartData.map((data) => data.weight),
         backgroundColor: [
           "rgba(75,192,192,1)",
           "#ecf0f1",
@@ -52,24 +52,17 @@ const Tracker = () => {
   });
 
   useEffect(() => {
-    // storing input name
     currentWeightData.weight = weight;
     localStorage.setItem("weight", JSON.stringify(weight));
   }, [weight]);
   
   useEffect(() => {
-    // storing input name
     currentWeightData.date = date;
     localStorage.setItem("date", JSON.stringify(date));
   }, [date]);
   
-  // submitData(() => {
-  //   //weightData.join(currentWeightData);
-  //   localStorage.setItem("weightData", JSON.stringify(currentWeightData));
-  // }, [weightData]);
-
-  function submitData() {
-    localStorage.clear();
+    function submitData() {
+    //localStorage.clear();
     if(currentWeightData.date === "" || currentWeightData.weight === "")
     return;
     
@@ -105,9 +98,8 @@ const Tracker = () => {
       <br></br>
       <button className="submitButton" onClick={submitData}>Submit</button>
     </form>
-
       <div className="lineChart" style={{ width: 700 }}>
-        <LineChart chartData={userData} />
+        <LineChart chartData={newChartData} />
       </div>
     </div>
 
