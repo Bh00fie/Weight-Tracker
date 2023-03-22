@@ -32,8 +32,8 @@ label, .sendButton {
 
 .sendButton {
     width: 20%;
-    height: 5vh;
-    margin-bottom: 2vh;
+    height: 7vh;
+    margin-bottom: 35vh;
     background-color: orange;
     color: white;
     display: flex;
