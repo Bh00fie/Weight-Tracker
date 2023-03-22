@@ -13,7 +13,8 @@ input, textarea {
     width: 40%;
     height: 3vw;
     border-radius: 2vw;
-    border: 2px solid black;
+    border: 2px solid rgb(10, 206, 131);
+    color: rgb(10, 206, 131);
     padding: 2vh;
 
 }
@@ -32,9 +33,9 @@ label, .sendButton {
 
 .sendButton {
     width: 20%;
-    height: 5vh;
-    margin-bottom: 2vh;
-    backgroundnpm-color: orange;
+    height: 7vh;
+    margin-bottom: 15vh;
+    background-color: orange;
     color: white;
     display: flex;
     justify-content: center;
@@ -54,7 +55,7 @@ label, .sendButton {
     }
 
     label, .sendButton {
-        font-size: smaller ;
+        font-size: smaller;
     }
 
   }
