@@ -118,6 +118,9 @@ const Tracker = () => {
             <tr key={index}>
               <td>{data.date}</td>
               <td>{data.weight}</td>
+              <td>
+                <button onClick={() => removeData(index)}>Remove</button>
+              </td>
             </tr>
           ))}
         </tbody>
