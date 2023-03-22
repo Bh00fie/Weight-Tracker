@@ -55,7 +55,7 @@ function CalcGrid() {
     const style= {
         container: {
         
-            border: '2px solid #ccc',
+            
             'border-radius': '5px',
             
           },
@@ -83,10 +83,7 @@ function CalcGrid() {
           data={data}
           style={style}
           columns={['Weight reduction', 'Daily Calories']}
-          pagination={{
-            limit: 4,
-            summary: false
-          }}
+          
         />
         
       </div>

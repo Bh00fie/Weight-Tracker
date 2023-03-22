@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
+export default function Meal({ meal }) {
+  const [imageUrl, setImageUrl] = useState("");
 
-const Meal =({title,calories,image,ingredients}) =>{
-    
-    
+  useEffect(() => {
+    fetch(
+      `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=cb1c464d94f142c08b156c5beddade8b&includeNutrition=false`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setImageUrl(data.image);
+      })
+      .catch(() => {
+        console.log("error");
+      });
+  }, [meal.id]);
+
   return (
-    <div >
-        <h1>{title}</h1>
-        <ol>
-            {ingredients.map(ingredient =>(
-            <li>{ingredient.text}</li>
-            ))}
-        </ol>
-        <p>Calories: {calories.toFixed()}</p>
-        <img src={image} alt=""  />  
-        </div>
+    <article className="border rounded col-sm-3">
+      <h3>{meal.title}</h3>
+      <img src={imageUrl} class="w-50"alt="recipe" />
+      <ul className="instructions">
+        <li>Preparation time: {meal.readyInMinutes} minutes</li>
+        <li>Number of servings: {meal.servings}</li>
+      </ul>
+
+      <a href={meal.sourceUrl}>Go to Recipe</a>
+    </article>
   );
 }
-
-export default Meal;

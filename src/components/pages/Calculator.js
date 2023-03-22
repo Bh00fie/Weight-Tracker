@@ -1,39 +1,27 @@
-import React,{ useEffect, useState } from "react";
+import React,{ useState } from "react";
 import CalcGrid from "../CalcGrid/CalcGrid";
-import Meal from "../mealPlan/meal";
+import MealList from "../mealPlan/mealdata";
 
 function Calculator() {
-  const API = {
-    ID : "3650d774",
-    KEY : "444e82a82953ea23ee421ed442b63697",
-    URL : "https://api.edamam.com/search?",
-  }
-  
-const [recipes, setRecipes]=useState([]);
-const [query, setQuery]= useState([]);
-const [search, setSearch]=useState([]);
+  const [mealData, setMealData] = useState(null);
+  const [calories, setCalories] = useState(2000);
 
-useEffect( ()=>{
-    getRecipes()
-}, [query])
-const mealTypes= ["Breakfast","Lunch","Dinner"];
-const getRecipes =async ()=>{
-const response = await fetch(`${API.URL}q=${query}&app_id=${API.ID}&app_key=${API.KEY}&from=0&to=1&calories=591-722&mealType=${mealTypes[0]}`)
-const data=await response.json()
-console.log(data)
-setRecipes(data.hits)
+  function getMealData() {
+    fetch(
+      `https://api.spoonacular.com/mealplanner/generate?apiKey=b0e25ff39f57465fa8c406e7361ae022&timeFrame=day&targetCalories=${calories}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setMealData(data);
+      })
+      .catch(() => {
+        console.log("error");
+      });
   }
 
-const getSearch=(e)=>{
-  e.preventDefault();
-  setQuery(search)
-  setSearch("")
-  
-}
-
-const updateSearch=(e)=>{
-    setSearch(e.target.value)
-}
+  function handleChange(e) {
+    setCalories(e.target.value);
+  }
 
   return (
     <div class="container">
@@ -41,25 +29,23 @@ const updateSearch=(e)=>{
     <div class="col-sm-12 border rounded">
       <h1>Calorie Calculator</h1>
     </div>
-    <div class="col-sm-7 border rounded">
+    <div class="col-sm-12 p-0 border rounded">
     
     <CalcGrid/>
     
     </div>
     <div class="recipes col-sm-12 border rounded">
-      <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar" type="text" value={search} onChange={updateSearch}></input>
-        <button className="search-button" type="submit">Search</button>
-      </form>
-      {recipes.map(recipe=>(
-      <Meal
-      key={recipe.recipe.label}
-      title={recipe.recipe.label}
-      calories={recipe.recipe.calories}
-      image={recipe.recipe.image}
-      ingredients={recipe.recipe.ingredients}
-      />
-      ))}
+    <div className="App">
+      <section className="controls">
+        <input
+          type="number"
+          placeholder="Input calories for your desired weight loss"
+          onChange={handleChange}
+        />
+        <button onClick={getMealData}>Get Daily Meal Plan</button>
+      </section>
+      {mealData && <MealList mealData={mealData} />}
+    </div>
       
     </div>
   </div>
