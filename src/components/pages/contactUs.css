@@ -45,6 +45,7 @@ label, .sendButton {
     font-size: 5vh;
     text-align: center;
     margin-top: 10vh ;
+    margin-bottom: 0;
 }
 
 

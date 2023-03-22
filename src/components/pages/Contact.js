@@ -19,11 +19,17 @@ function Contact(props) {
       });
   };
 
+  const resetForm = () => {
+    form.current.reset();
+    setIsEmailSent(false);
+  };
+
   return (
     <div className='contactContainer'>
       {isEmailSent ? (
         <div className='confirmationMessage'>
           <p>Email sent successfully! ✅</p>
+          <button className="sendButtonAgain" onClick={resetForm}>Send another email</button>
         </div>
       ) : (
         <form ref={form} onSubmit={sendEmail}>
