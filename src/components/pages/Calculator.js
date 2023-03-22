@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
-import CalcGrid from "../CalcGrid/CalcGrid";
-import MealList from "../mealPlan/mealdata";
+import CalcGrid from "../sections/CalcGrid/CalcGrid";
+import MealList from "../sections/mealPlan/mealdata";
 
 function Calculator() {
   const [mealData, setMealData] = useState(null);
@@ -56,9 +56,10 @@ function Calculator() {
       {mealData && <MealList mealData={mealData} />}
     </div>
       
+             
+      </div>
     </div>
   </div>
-</div>
 
   );
   

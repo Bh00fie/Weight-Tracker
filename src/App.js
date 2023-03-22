@@ -5,9 +5,8 @@ import Home from './components/pages/Home';
 import Tracker from './components/pages/Tracker';
 import Calculator from './components/pages/Calculator';
 import Contact from './components/pages/Contact';
-import Footer from './components/footer/footer';
-import "./style.css"
-
+import Footer from './components/Footer/footer';
+import './App.css';
 
 
 function App() {

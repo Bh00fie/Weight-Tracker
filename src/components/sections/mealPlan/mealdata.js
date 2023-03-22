@@ -1,5 +1,5 @@
 import React from "react";
-import Meal from "./meal"
+import Meal from "./meal";
 
 export default function MealList({ mealData }) {
   const nutrients = mealData.nutrients;

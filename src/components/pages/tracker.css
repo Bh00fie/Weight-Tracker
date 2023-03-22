@@ -3,3 +3,19 @@
     margin-right: auto;
 
 }
+
+.weightInput {
+    width: 20%;
+}
+
+.dateInput {
+    width: 400px;
+}
+
+.submitButton {
+    width: 20%;
+    margin-bottom: 2vh;
+    border-radius: 20px;
+    background-color: orange;
+    color: white;
+}
