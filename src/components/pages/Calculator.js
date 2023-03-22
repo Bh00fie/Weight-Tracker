@@ -24,9 +24,9 @@ function Calculator() {
   }
 
   return (
-    <div class="container">
-  <div class="row">
-    <div class="col-sm-12 border rounded">
+    <div className="container">
+  <div className="row">
+    <div className="col-sm-12 border">
       <h1>Calorie Calculator</h1>
     </div>
     <div class="col-sm-12 p-0 border rounded">
