@@ -3,18 +3,16 @@ import { useState, useEffect } from "react";
 import LineChart from "../sections/linechart/LineChart";
 import "./tracker.css"
 
-
 const currentWeightData = {
-  weight:  "",
+  weight: "",
   date: ""
-}    
+};
 
 const Tracker = () => {
-// eslint-disable-next-line
-    const [weightData, setWeightData] = useState(() => {
+  const [weightData, setWeightData] = useState(() => {
     const savedWeightData = localStorage.getItem("weightData");
     const initialValue = JSON.parse(savedWeightData);
-    return initialValue || "";
+    return initialValue || [];
   });
 
   const [weight, setWeight] = useState(() => {
@@ -31,8 +29,7 @@ const Tracker = () => {
 
   const ChartData = JSON.parse(localStorage.getItem("weightData")) || [];
 
-  // eslint-disable-next-line
-  const [newChartData, setChartData ] = useState({
+  const [newChartData, setChartData] = useState({
     labels: ChartData.map((data) => data.date),
     datasets: [
       {
@@ -55,54 +52,97 @@ const Tracker = () => {
     currentWeightData.weight = weight;
     localStorage.setItem("weight", JSON.stringify(weight));
   }, [weight]);
-  
+
   useEffect(() => {
     currentWeightData.date = date;
     localStorage.setItem("date", JSON.stringify(date));
   }, [date]);
+
+  function removeData(index) {
+    const weightDataArray = [...weightData];
+    weightDataArray.splice(index, 1);
+    localStorage.setItem("weightData", JSON.stringify(weightDataArray));
+    setWeightData(weightDataArray);
   
-    function submitData() {
-    //localStorage.clear();
-    if(currentWeightData.date !== "" && currentWeightData.weight !== "")
-    {
+    const newLabels = weightDataArray.map((data) => data.date);
+    const newWeights = weightDataArray.map((data) => data.weight);
+  
+    setChartData((prevState) => ({
+      ...prevState,
+      labels: newLabels,
+      datasets: [
+        {
+          ...prevState.datasets[0],
+          data: newWeights,
+        },
+      ],
+    }));
+  }
+  
+  
+  function submitData() {
+    if (currentWeightData.date !== "" && currentWeightData.weight !== "") {
       const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
       weightDataArray.push(currentWeightData);
       localStorage.setItem("weightData", JSON.stringify(weightDataArray));
+      setWeightData(weightDataArray);
     }
   }
-  
 
   return (
     <div className="App">
       <h1>Weight Tracker</h1>
       <form>
-      <div className="weightInput">
-        <label htmlFor="NewWeight">Weight:</label>
-        <input id="NewWeight"
-        type="number"
-        value={weight}
-        onChange={(e) => setWeight(e.target.value)}
-        placeholder=""
-        />
-      </div>
-      <div className="dateInput">
-        <label htmlFor="NewDate">Date</label>
-        <input id="NewDate"
-        type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-        placeholder=""
-        />
-      </div>
-      <br></br>
-      <button className="submitButton" onClick={submitData}>Submit</button>
-    </form>
-      <div className="lineChart" style={{ width: 700 }}>
+        <div className="weightInput">
+          <label htmlFor="NewWeight">Weight:</label>
+          <input
+            id="NewWeight"
+            type="number"
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+            placeholder=""
+          />
+        </div>
+        <div className="dateInput">
+          <label htmlFor="NewDate">Date</label>
+          <input
+            id="NewDate"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            placeholder=""
+          />
+        </div>
+        <br />
+        <button className="submitButton" onClick={submitData}>
+          Submit
+        </button>
+      </form>
+      <div className="lineChart">
         <LineChart chartData={newChartData} />
       </div>
+      <table>
+        <thead>
+          <tr className="tableHeader">
+            <th>Date</th>
+            <th>Weight</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {weightData.map((data, index) => (
+            <tr key={index} className="tableBody">
+              <td>{data.date}</td>
+              <td>{data.weight}</td>
+              <td>
+                <button className="removeButton" onClick={() => removeData(index)}>Remove</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-
   );
 };
 
-export default Tracker;
+export default Tracker
