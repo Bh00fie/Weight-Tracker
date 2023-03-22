@@ -118,7 +118,7 @@ const Tracker = () => {
           Submit
         </button>
       </form>
-      <div className="lineChart" style={{ width: 700 }}>
+      <div className="lineChart">
         <LineChart chartData={newChartData} />
       </div>
       <table>
@@ -135,7 +135,7 @@ const Tracker = () => {
               <td>{data.date}</td>
               <td>{data.weight}</td>
               <td>
-                <button onClick={() => removeData(index)}>Remove</button>
+                <button className="removeButton" onClick={() => removeData(index)}>Remove</button>
               </td>
             </tr>
           ))}
