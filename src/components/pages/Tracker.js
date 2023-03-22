@@ -58,6 +58,13 @@ const Tracker = () => {
     localStorage.setItem("date", JSON.stringify(date));
   }, [date]);
 
+  function removeData(index) {
+    const weightDataArray = [...weightData];
+    weightDataArray.splice(index, 1);
+    localStorage.setItem("weightData", JSON.stringify(weightDataArray));
+    setWeightData(weightDataArray);
+  }
+  
   function submitData() {
     if (currentWeightData.date !== "" && currentWeightData.weight !== "") {
       const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
