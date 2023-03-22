@@ -27,4 +27,5 @@
     aspect-ratio: 16/9;
     position: relative;
     object-fit: fill;
+    margin-bottom: 15vh;
   }
