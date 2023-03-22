@@ -63,7 +63,7 @@ const Tracker = () => {
   
     function submitData() {
     //localStorage.clear();
-    if(currentWeightData.date != "" && currentWeightData.weight != "")
+    if(currentWeightData.date !== "" && currentWeightData.weight !== "")
     {
       const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
       weightDataArray.push(currentWeightData);
