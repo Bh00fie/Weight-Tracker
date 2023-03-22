@@ -32,11 +32,36 @@ th, td {
     width: 15vh;
 }
 
-th {
+th, .weightInput label, .dateInput label {
     font-size: 1.5rem;
 }
 
-td {
+.weightInput label, .dateInput label {
+    margin-right: 1rem;
+}
+
+.weightInput input, .dateInput input {
+    text-align: center;
+}
+
+.weightInput input {
+    width: 5rem;
+}
+
+.dateInput input {
+    width: 15rem;
+}
+
+td, .weightInput, .dateInput {
     font-size: 1.25rem;
     color: white;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
