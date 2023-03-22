@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import LineChart from "../sections/linechart/LineChart";
+import LineChart from "../sections/Linechart/LineChart";
 import "./tracker.css"
 
 
