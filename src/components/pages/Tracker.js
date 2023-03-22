@@ -72,7 +72,6 @@ const Tracker = () => {
     
   }
   
-
   return (
     <div className="App">
       <h1>Weight Tracker</h1>

@@ -7,9 +7,18 @@
 .weightInput {
     width: 20%;
 }
+.weightInput input, textarea {
+   color: black;
+   background-color: white;
+}
 
 .dateInput {
     width: 400px;
+}
+
+.dateInput input, textarea {
+    color: black;
+    background-color: white
 }
 
 .submitButton {
