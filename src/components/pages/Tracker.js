@@ -62,14 +62,15 @@ const Tracker = () => {
   }, [date]);
   
     function submitData() {
+    
     //localStorage.clear();
-    if(currentWeightData.date === "" || currentWeightData.weight === "")
-    return;
-    
-    const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
-    weightDataArray.push(currentWeightData);
-    localStorage.setItem("weightData", JSON.stringify(weightDataArray));
-    
+    if(currentWeightData.date != "" && currentWeightData.weight != "")
+    {
+      const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
+      weightDataArray.push(currentWeightData);
+      localStorage.setItem("weightData", JSON.stringify(weightDataArray));      
+    }
+        
   }
   
   return (
@@ -101,7 +102,6 @@ const Tracker = () => {
         <LineChart chartData={newChartData} />
       </div>
     </div>
-
   );
 };
 
