@@ -41,6 +41,11 @@ label, .sendButton {
     justify-content: center;
 }
 
+.sendButtonAgain{
+    width: 40%;
+    font-size: 2rem;
+    margin-bottom: 5vh;
+}
 
 .confirmationMessage {
     font-size: 5vh;

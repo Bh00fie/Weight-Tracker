@@ -20,7 +20,6 @@ function Contact(props) {
   };
 
   const resetForm = () => {
-    form.current.reset();
     setIsEmailSent(false);
   };
 
