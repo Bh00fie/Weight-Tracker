@@ -63,7 +63,22 @@ const Tracker = () => {
     weightDataArray.splice(index, 1);
     localStorage.setItem("weightData", JSON.stringify(weightDataArray));
     setWeightData(weightDataArray);
+  
+    const newLabels = weightDataArray.map((data) => data.date);
+    const newWeights = weightDataArray.map((data) => data.weight);
+  
+    setChartData((prevState) => ({
+      ...prevState,
+      labels: newLabels,
+      datasets: [
+        {
+          ...prevState.datasets[0],
+          data: newWeights,
+        },
+      ],
+    }));
   }
+  
   
   function submitData() {
     if (currentWeightData.date !== "" && currentWeightData.weight !== "") {
