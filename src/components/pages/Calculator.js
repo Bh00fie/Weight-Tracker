@@ -1,6 +1,7 @@
 import React,{useEffect, useState } from "react";
 import CalcGrid from "../sections/CalcGrid/CalcGrid";
 import MealList from "../sections/mealPlan/mealdata";
+import "./calculator.css";
 
 const currentUserData = {
   height:  "",
@@ -9,7 +10,7 @@ const currentUserData = {
   exercise: ""
 }    
 
-import "./calculator.css";
+
 
 
 function Calculator() {
