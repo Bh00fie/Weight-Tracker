@@ -1,16 +1,37 @@
 import { Grid } from 'gridjs-react';
 import React from "react";
-const weight=80;
-const height=180;
-const age=32;
-const gender="male";
-const exercise="heavy-exercise"
+
+
+const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
+const UserData = JSON.parse(localStorage.getItem("userData") || "[]");
+let lastweight=0;
+let lastuser=0;
+let weight=0;
+let height=0;
+let age=0;
+let gender="";
+let exercise="";
+if(weightDataArray.length >= 1 && UserData.length >= 1 ){
+  lastweight=weightDataArray.length-1;
+  lastuser=UserData.length-1;
+  weight=weightDataArray[lastweight].weight;
+  height=UserData[lastuser].height;
+  age=UserData[lastuser].age;
+  gender=UserData[lastuser].gender;
+  exercise=UserData[lastuser].exercise;
+  console.log(height)
+}
+
+
+console.log(UserData)
+console.log(weightDataArray)
+
+
 let bmr=0;
 let weightloss=0;
 let mildloss=0;
 let loss=0;
 let extremeloss=0;
-    
 
 
 function CalcGrid() {
