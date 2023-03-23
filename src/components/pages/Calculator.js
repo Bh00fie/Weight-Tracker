@@ -16,11 +16,7 @@ const currentUserData = {
 function Calculator() {
   const [mealData, setMealData] = useState(null);
   const [calories, setCalories] = useState(2000);
-  const [userData, setUserData] = useState(() => {
-    const savedUserData = localStorage.getItem("userData");
-    const initialValue = JSON.parse(savedUserData);
-    return initialValue || "";
-  });
+  
   const [age, setAge] = useState(() => {
     const savedAge = localStorage.getItem("age");
     const initialValue = JSON.parse(savedAge);
