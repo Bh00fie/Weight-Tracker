@@ -74,9 +74,7 @@ function Calculator() {
   }
 
   function submitData() {
-    if(currentUserData.age !== "" || currentUserData.height !== "" )
-    return;
-    
+ 
     const userDataArray = JSON.parse(localStorage.getItem("userData") || "[]");
     userDataArray.push(currentUserData);
     localStorage.setItem("userData", JSON.stringify(userDataArray));
