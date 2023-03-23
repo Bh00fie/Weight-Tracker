@@ -1,33 +1,47 @@
-import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import Learn from './Learn';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import './contactUs.css';
 
 function Contact(props) {
+  const form = useRef();
+  const [isEmailSent, setIsEmailSent] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_wo1kije', 'template_19vdx6m', form.current, 'iBYhqT4UJAXbXb877')
+      .then((result) => {
+        console.log(result.text);
+        setIsEmailSent(true);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
+  const resetForm = () => {
+    setIsEmailSent(false);
+  };
+
   return (
-    <div>
-      <h1>Contact Page</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-        molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-        magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-        efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-        mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-        faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-        ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-        dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-        rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-      </p>
-      <Link to="learn" role="button" className="btn btn-link">
-        Learn More
-      </Link>
-      <Link to="contact" role="button" className="btn btn-link">
-        Learn Less
-      </Link>
-      <Routes>
-        <Route path="learn" element={<Learn />} />
-      </Routes>
+    <div className='contactContainer'>
+      {isEmailSent ? (
+        <div className='confirmationMessage'>
+          <p>Email sent successfully! ✅</p>
+          <button className="sendButtonAgain" onClick={resetForm}>Send another email</button>
+        </div>
+      ) : (
+        <form ref={form} onSubmit={sendEmail}>
+          <h1>Get in touch with us:</h1>
+          <label>Name</label>
+          <input type='text' name='user_name' />
+          <label>Email</label>
+          <input type='email' name='user_email' />
+          <label>Message</label>
+          <textarea name='message' />
+          <input type='submit' value='Send' className='sendButton' />
+        </form>
+      )}
     </div>
   );
 }

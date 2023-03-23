@@ -1,30 +1,32 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavTabs from './components/NavTabs';
+import NavTabs from './components/navbar/NavTabs';
 import Home from './components/pages/Home';
-import About from './components/pages/About';
-import Blog from './components/pages/Blog';
+import Tracker from './components/pages/Tracker';
+import Calculator from './components/pages/Calculator';
 import Contact from './components/pages/Contact';
+import Footer from './components/footer/footer';
+import './App.css';
+
 
 function App() {
+
   return (
     <Router>
       <div>
         <NavTabs />
-        {/* Wrap Route elements in a Routes component */}
         <Routes>
-          {/* Define routes using the Route component to render different page components at different paths */}
-          {/* Define a default route that will render the Home component */}
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="blog" element={<Blog />} />
-          {/* Define a route that will have descendant routes */}
+          <Route path="tracker" element={<Tracker />} />
+          <Route path="calculator" element={<Calculator />} />
           <Route path="contact/*" element={<Contact />} />
         </Routes>
+      
       </div>
+      
+      <Footer />
     </Router>
   );
 }
 
 export default App;
-

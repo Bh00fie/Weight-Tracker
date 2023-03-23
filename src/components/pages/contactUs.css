@@ -1,0 +1,75 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form, h1 {
+    text-align: center;
+}
+
+input, textarea {
+    width: 40%;
+    height: 3vw;
+    border-radius: 2vw;
+    border: 2px solid rgb(10, 206, 131);
+    color: rgb(10, 206, 131);
+    padding: 2vh;
+
+}
+
+textarea {
+    height: 6vw;
+    max-height: 6vw;
+    min-height: 6vw;
+}
+
+label, .sendButton {
+    margin: 1.5vh 0 0 0;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.sendButton {
+    width: 40%;
+    height: 40%;
+    margin-bottom: 15vh;
+    background-color: orange;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.sendButtonAgain{
+    width: 40%;
+    font-size: 2rem;
+    margin-bottom: 5vh;
+}
+
+.confirmationMessage {
+    font-size: 5vh;
+    text-align: center;
+    margin-top: 10vh ;
+    margin-bottom: 0;
+}
+
+
+@media screen and (max-width: 800px) {
+    input, textarea {
+      width: 80%;
+      height: 5vh;
+    }
+
+    textarea {
+        height: 10vh;
+        max-height: 10vh;
+        min-height: 10vh;
+        padding: 1vh 2vh;
+    }
+
+    label, .sendButton {
+        font-size: smaller;
+    }
+
+  }

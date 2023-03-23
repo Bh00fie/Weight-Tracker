@@ -1,0 +1,28 @@
+.iconImage {
+    height: 2.8vh;
+    border-radius: 2px;
+}
+
+.icon .nav-link {
+    padding: 0.31vh 1.25vh 0.27vh 1.25vh
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5vh;
+}
+
+.nav-link {
+    color: white;
+    font-weight: 500;
+    --bs-nav-link-hover-color: orange;
+}
+
+.nav-tabs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 2vh ;
+}

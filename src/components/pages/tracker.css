@@ -1,0 +1,80 @@
+.lineChart {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    width: 80%;
+}
+
+.weightInput {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.weightInput label {
+    margin-top: 0;
+}
+
+.dateInput {
+    width: 400px;
+}
+
+.submitButton {
+    width: 20%;
+    border-radius: 20px;
+    background-color: orange;
+    color: white;
+    font-size: large;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6vh;
+}
+
+.tableHeader, .tableBody {
+    text-align: center;
+}
+
+th, td {
+    width: 15vh;
+}
+
+th, .weightInput label, .dateInput label {
+    font-size: 1.5rem;
+}
+
+.weightInput label, .dateInput label {
+    margin-right: 1rem;
+}
+
+.weightInput input, .dateInput input {
+    text-align: center;
+}
+
+.weightInput input {
+    width: 5rem;
+}
+
+.dateInput input {
+    width: 15rem;
+}
+
+td, .weightInput, .dateInput {
+    font-size: 1.25rem;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.removeButton {
+    width: fit-content;
+}
