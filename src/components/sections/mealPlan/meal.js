@@ -19,7 +19,7 @@ export default function Meal({ meal }) {
   return (
     <article className="border rounded col-sm-3 mb-3">
       <h3>{meal.title}</h3>
-      <img src={imageUrl} class="w-50"alt="recipe" />
+      <img src={imageUrl} className="w-50" alt="recipe" />
       <ul className="instructions">
         <li>Preparation time: {meal.readyInMinutes} minutes</li>
         <li>Number of servings: {meal.servings}</li>
