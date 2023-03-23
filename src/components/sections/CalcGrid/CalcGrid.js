@@ -89,7 +89,7 @@ function CalcGrid() {
         th: {
           'background-color': 'rgba(0, 0, 0, 0.1)',
           
-          color: '#000',
+          color: 'rgb(10, 206, 131)',
           
           'border-bottom': '2px solid #ccc',
           

@@ -17,7 +17,7 @@ export default function Meal({ meal }) {
   }, [meal.id]);
 
   return (
-    <article className="border rounded col-sm-3">
+    <article className="border rounded col-sm-3 mb-3">
       <h3>{meal.title}</h3>
       <img src={imageUrl} className="w-50" alt="recipe" />
       <ul className="instructions">

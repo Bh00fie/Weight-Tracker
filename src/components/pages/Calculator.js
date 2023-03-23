@@ -1,12 +1,16 @@
 import React,{useEffect, useState } from "react";
 import CalcGrid from "../sections/CalcGrid/CalcGrid";
 import MealList from "../sections/mealPlan/mealdata";
+
 const currentUserData = {
   height:  "",
   age: "",
   gender: "",
   exercise: ""
 }    
+
+import "./calculator.css";
+
 
 function Calculator() {
   const [mealData, setMealData] = useState(null);
@@ -104,6 +108,7 @@ function Calculator() {
         placeholder=""
         />
       </div>
+
       <div className="genderInput">
         <label htmlFor="NewGender">Gender</label>
         {/* <input id="NewGender"
@@ -117,6 +122,7 @@ function Calculator() {
             <option value="male">male</option>
             <option value="female">female</option>
         </select>
+
       </div>
       <div className="exerciseInput">
         <label htmlFor="NewExercise">Exercise amount</label>
