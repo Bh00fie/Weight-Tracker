@@ -6,7 +6,7 @@
 This application is designed to keep track of a user's health by storing vital information concerning their physical well-being.
 Information such as weight, height, age, as well as calories intake will be used to help the user keep track of their health journey
 
-Using the application on a daily basis can help the user make decisions regarding adjustments to their lifestyle in order to increase or maintain their health.
+Using the application on a daily basis can help the user make decisions regarding adjustments to their lifestyle in order to increase or mahintain their health.
 
 
 ![screenshot](./public/screenshot.png)
