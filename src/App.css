@@ -1,11 +1,23 @@
+
+:root{
+    --backgroundColour: white;
+    --textColour: black;
+    --buttonColour: orange;
+    --buttonText: black;
+}
+* {
+    margin: 4px;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: rgb(6, 26, 32);
-    color: rgb(10, 206, 131);
+    background-color: var(--backgroundColour);
+    color: var(--textColour);
 }
 
 button {
     width: 20%;
     border-radius: 20px;
-    background-color: orange;
-    color: white;
+    background-color: var(--buttonColour);
+    color: var(--buttonText);
 }

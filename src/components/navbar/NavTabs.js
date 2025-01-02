@@ -6,17 +6,6 @@ import "./navBar.css"
 function NavTabs() {
   return (
     <ul className="nav nav-tabs">
-      <li className="nav-item icon">
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-        <img src={require('./icon.jpg')} alt="icon" className='iconImage'/>
-        </NavLink>
-      </li>
       <li className="nav-item">
         <NavLink
           to="tracker"
@@ -35,17 +24,6 @@ function NavTabs() {
           }
         >
           Calculator
-        </NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink
-          to="contact"
-          end
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-          Contact
         </NavLink>
       </li>
     </ul>

@@ -25,7 +25,7 @@
     width: 20%;
     border-radius: 20px;
     background-color: orange;
-    color: white;
+    color: var(--buttonText);
     font-size: large;
 }
 
@@ -65,7 +65,7 @@ th, .weightInput label, .dateInput label {
 
 td, .weightInput, .dateInput {
     font-size: 1.25rem;
-    color: white;
+    color: var(--textColour);
 }
 
 form {

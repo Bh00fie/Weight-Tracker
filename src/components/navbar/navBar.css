@@ -7,16 +7,17 @@
     padding: 0.31vh 1.25vh 0.27vh 1.25vh
 }
 
-.nav-tabs .nav-link {
-    border: 1px solid white;
+.nav-tabs .nav-link.active {
+    border: 1px solid var(--textColour);
     border-radius: 10px;
     margin: 0.5vh;
+    border-color: black;
 }
 
 .nav-link {
-    color: white;
+    color: var(--textColour);
     font-weight: 500;
-    --bs-nav-link-hover-color: orange;
+    --bs-nav-link-hover-color: var(--buttonColour);
 }
 
 .nav-tabs{
