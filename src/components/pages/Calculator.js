@@ -79,7 +79,7 @@ function Calculator() {
   return (
     <div class="container">
   <div class="row">
-    <div class="col-sm-12 border rounded">
+    <div class="col-sm-12">
     <h1>Calorie Calculator</h1>
     <form id="calorieForm">
       <div className="heightInput">
@@ -136,12 +136,12 @@ function Calculator() {
       <button className="submitButton" onClick={submitData}>Submit</button>
     </form>
     </div>
-    <div class="col-sm-12 p-0 border rounded">
+    <div class="col-sm-12 p-0">
     
     <CalcGrid/>
     
     </div>
-    <div class="recipes col-sm-12 border rounded">
+    <div class="recipes col-sm-12">
     <div className="App">
       <section className="controls">
         <input

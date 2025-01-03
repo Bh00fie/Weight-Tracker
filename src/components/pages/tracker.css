@@ -1,30 +1,22 @@
 .lineChart {
-    /* margin-left: auto;
-    margin-right: auto; */
     margin-top: 3rem;
-    /* width: 80%; */
     display: flex;
     justify-content: center;
 }
 
-.weightInput, .dateInput {
+.weightInput, .dateInput, .heightInput, .ageInput, .genderInput, .exerciseInput {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-top: 1vh;
 }
-.weightInput{
+.weightInput, .heightInput{
     margin-top: 2vh;
 }
 
-.weightInput label, .dateInput label {
+.weightInput label, .dateInput label, .heightInput label, .ageInput label, .genderInput label, .exerciseInput label{
     width: 5rem;
 }
-
-.weightInput label {
-    margin-top: 0;
-}
-
 
 .submitButton {
     margin: 0 1vh;
@@ -63,24 +55,14 @@ th {
     margin-right: 1rem;
 }
 
-.weightInput input, .dateInput input {
+.weightInput input, .dateInput input, .heightInput input, .ageInput input, .genderInput input, .exerciseInput input{
     text-align: center;
-}
-
-.weightInput input, .dateInput input {
     width: 10rem;
 }
 
-td, .weightInput, .dateInput {
+td, .weightInput, .dateInput, .heightInput, .ageInput, .genderInput, .exerciseInput {
     font-size: 1.25rem;
     color: var(--textColour);
-}
-
-#calorieForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .removeButton {
