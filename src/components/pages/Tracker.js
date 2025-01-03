@@ -27,6 +27,9 @@ const Tracker = () => {
     return initialValue || "";
   });
 
+  const [weightError, setWeightError] = useState("");
+  const [dateError, setDateError] = useState("");
+
   const ChartData = JSON.parse(localStorage.getItem("weightData")) || [];
 
   const [newChartData, setChartData] = useState({
@@ -75,16 +78,54 @@ const Tracker = () => {
     }));
   }
   
+  function validateForm() {
+    let isValid = true;
+    if (!weight) {
+      setWeightError("This field is required!");
+      isValid = false;
+    } else {
+      setWeightError("");
+    }
+
+    if (!date) {
+      setDateError("This field is required!");
+      isValid = false;
+    } else {
+      setDateError("");
+    }
+
+    return isValid;
+  }
   
-  function submitData() {
-    if (currentWeightData.date !== "" && currentWeightData.weight !== "") {
-      const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
-      weightDataArray.push(currentWeightData);
-      localStorage.setItem("weightData", JSON.stringify(weightDataArray));
-      setWeightData(weightDataArray);
+  
+  function submitData(e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+  
+    if (validateForm()) {
+      if (currentWeightData.date !== "" && currentWeightData.weight !== "") {
+        const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
+        weightDataArray.push({...currentWeightData});
+        localStorage.setItem("weightData", JSON.stringify(weightDataArray));
+        setWeightData(weightDataArray);
+  
+        setChartData({
+          labels: weightDataArray.map((data) => data.date),
+          datasets: [
+            {
+              ...newChartData.datasets[0],
+              data: weightDataArray.map((data) => data.weight),
+            },
+          ],
+        });
+        
+        // Clear inputs after submission
+        setWeight("");
+        setDate("");
+      }
     }
   }
 
+  
   return (
     <div className="App">
       <h1>Weight Tracker</h1>
@@ -96,8 +137,9 @@ const Tracker = () => {
             type="number"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            placeholder=""
+            placeholder="Kg"
           />
+          {weightError && <span className="error">{weightError}</span>}
         </div>
         <div className="dateInput">
           <label htmlFor="NewDate">Date:</label>
@@ -106,8 +148,8 @@ const Tracker = () => {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            placeholder=""
           />
+          {dateError && <span className="error">{dateError}</span>}
         </div>
         <br />
         <button className="submitButton" onClick={submitData}>
@@ -117,6 +159,7 @@ const Tracker = () => {
       <div className="lineChart">
         <LineChart chartData={newChartData} />
       </div>
+      {weightData.length > 0 && (
       <table>
         <thead>
           <tr className="tableHeader">
@@ -137,6 +180,7 @@ const Tracker = () => {
           ))}
         </tbody>
       </table>
+      )}
     </div>
   );
 };
