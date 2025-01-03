@@ -6,7 +6,7 @@
     --buttonText: black;
 }
 * {
-    margin: 4px;
+    margin: 0.5vh;
     box-sizing: border-box;
 }
 
@@ -15,9 +15,13 @@ body {
     color: var(--textColour);
 }
 
+input, select{
+    border-radius: 10px;
+}
+
 button {
     width: 20%;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: var(--buttonColour);
     color: var(--buttonText);
 }

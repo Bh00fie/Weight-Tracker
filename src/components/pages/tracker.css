@@ -23,7 +23,7 @@
 
 .submitButton {
     width: 20%;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: orange;
     color: var(--buttonText);
     font-size: large;
@@ -68,7 +68,7 @@ td, .weightInput, .dateInput {
     color: var(--textColour);
 }
 
-form {
+#calorieForm {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -68,10 +68,10 @@ function CalcGrid() {
         extremeloss=(weightloss*0.67).toFixed();
       }
     const griddata= [
-        ['0kg/week (maintain)', weightloss],
-        ['0.25kg/week', mildloss],
-        ['0.5kg/week', loss],
-        ['1kg/week', extremeloss]
+        ['0 kg/week (maintain)', weightloss],
+        ['0.25 kg/week', mildloss],
+        ['0.5 kg/week', loss],
+        ['1 kg/week', extremeloss]
       ]
     const style= {
         container: {
@@ -89,7 +89,7 @@ function CalcGrid() {
         th: {
           'background-color': 'rgba(0, 0, 0, 0.1)',
           
-          color: 'rgb(10, 206, 131)',
+          color: 'orange',
           
           'border-bottom': '2px solid #ccc',
           

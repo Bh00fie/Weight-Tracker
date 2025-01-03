@@ -42,7 +42,7 @@ function Footer() {
             </div>
               
           {/* Copyright */}
-          <div className="copyright text-light">Weight Tracker - All Right Reserved 2023</div>
+          <div className="copyright text-dark">Weight Tracker - All Right Reserved 2023</div>
         </footer>
       </div>
   );

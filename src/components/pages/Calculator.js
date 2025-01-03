@@ -84,7 +84,8 @@ function Calculator() {
     <div class="container">
   <div class="row">
     <div class="col-sm-12 border rounded">
-    <form>
+    <h1>Calorie Calculator</h1>
+    <form id="calorieForm">
       <div className="heightInput">
         <label htmlFor="NewHeight">Height:</label>
         <input id="NewHeight"
@@ -138,7 +139,6 @@ function Calculator() {
       <br></br>
       <button className="submitButton" onClick={submitData}>Submit</button>
     </form>
-      <h1>Calorie Calculator</h1>
     </div>
     <div class="col-sm-12 p-0 border rounded">
     
