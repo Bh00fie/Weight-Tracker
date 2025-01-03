@@ -36,11 +36,7 @@ const Tracker = () => {
         label: "Weight Journey",
         data: ChartData.map((data) => data.weight),
         backgroundColor: [
-          "orange",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
+          "white",
         ],
         borderColor: "orange",
         borderWidth: 2,
@@ -104,7 +100,7 @@ const Tracker = () => {
           />
         </div>
         <div className="dateInput">
-          <label htmlFor="NewDate">Date</label>
+          <label htmlFor="NewDate">Date:</label>
           <input
             id="NewDate"
             type="date"
@@ -124,16 +120,16 @@ const Tracker = () => {
       <table>
         <thead>
           <tr className="tableHeader">
-            <th>Date</th>
-            <th>Weight</th>
-            <th>Remove</th>
+            <th>Date:</th>
+            <th>Weight:</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {weightData.map((data, index) => (
             <tr key={index} className="tableBody">
               <td>{data.date}</td>
-              <td>{data.weight}</td>
+              <td>{data.weight} Kg</td>
               <td>
                 <button className="removeButton" onClick={() => removeData(index)}>Remove</button>
               </td>

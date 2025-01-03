@@ -1,35 +1,44 @@
 .lineChart {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     margin-top: 3rem;
-    width: 80%;
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
 }
 
-.weightInput {
-    width: 20%;
+.weightInput, .dateInput {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 1vh;
+}
+.weightInput{
     margin-top: 2vh;
+}
+
+.weightInput label, .dateInput label {
+    width: 5rem;
 }
 
 .weightInput label {
     margin-top: 0;
 }
 
-.dateInput {
-    width: 400px;
-}
 
 .submitButton {
-    width: 20%;
+    margin: 0 1vh;
     border-radius: 10px;
     background-color: orange;
     color: var(--buttonText);
     font-size: large;
+    width: 10rem;
 }
 
 table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 6vh;
@@ -39,12 +48,15 @@ table {
     text-align: center;
 }
 
+
 th, td {
     width: 15vh;
 }
 
-th, .weightInput label, .dateInput label {
+th {
     font-size: 1.5rem;
+    font-weight: 500;
+
 }
 
 .weightInput label, .dateInput label {
@@ -55,12 +67,8 @@ th, .weightInput label, .dateInput label {
     text-align: center;
 }
 
-.weightInput input {
-    width: 5rem;
-}
-
-.dateInput input {
-    width: 15rem;
+.weightInput input, .dateInput input {
+    width: 10rem;
 }
 
 td, .weightInput, .dateInput {
@@ -77,4 +85,8 @@ td, .weightInput, .dateInput {
 
 .removeButton {
     width: fit-content;
+}
+
+thead {
+    margin-bottom: 1rem;
 }

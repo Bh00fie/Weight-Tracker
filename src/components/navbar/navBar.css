@@ -11,13 +11,16 @@
     border: 1px solid var(--textColour);
     border-radius: 10px;
     border-color: black;
+    color: var(--buttonColour);
+
 }
 
 .nav-link {
     color: var(--textColour);
-    font-weight: 500;
+    font-size: larger;
     --bs-nav-link-hover-color: var(--buttonColour);
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .nav-tabs{

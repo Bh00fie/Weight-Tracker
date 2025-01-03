@@ -19,6 +19,23 @@ input, select{
     border-radius: 10px;
 }
 
+.App { 
+    margin: 0 20%;
+}
+
+@media (max-width:  1200px) {
+    .App { 
+        margin: 0 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .App { 
+        margin: 0 7.5%;
+    }
+}
+
+
 button {
     width: 20%;
     border-radius: 10px;

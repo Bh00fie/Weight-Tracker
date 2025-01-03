@@ -2,16 +2,12 @@ import React,{useEffect, useState } from "react";
 import CalcGrid from "../sections/CalcGrid/CalcGrid";
 import MealList from "../sections/mealPlan/mealdata";
 
-
 const currentUserData = {
   height:  "",
   age: "",
   gender: "",
   exercise: ""
 }    
-
-
-
 
 function Calculator() {
   const [mealData, setMealData] = useState(null);
