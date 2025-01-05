@@ -14,16 +14,16 @@
     margin-top: 2vh;
 }
 
-.weightInput label, .dateInput label, .heightInput label, .ageInput label, .genderInput label, .exerciseInput label{
+.weightInput label, .dateInput label, .heightInput label, .ageInput label, .genderInput label, .exerciseInput label, #caloriesInput{
     width: 5rem;
 }
 
-.submitButton {
+.submitButton, .getRecipesButton, #getRecipesButton {
     margin: 0 1vh;
     border-radius: 10px;
     background-color: orange;
     color: var(--buttonText);
-    font-size: large;
+    font-size: 1.25rem;
     width: 10rem;
 }
 
@@ -31,9 +31,6 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 6vh;
 }
 
 .tableHeader, .tableBody {
@@ -42,25 +39,27 @@ table {
 
 
 th, td {
-    width: 15vh;
+    width: 35vh;
 }
 
 th {
     font-size: 1.5rem;
     font-weight: 500;
-
+}
+tr{
+    margin-bottom: 2rem;
 }
 
 .weightInput label, .dateInput label {
     margin-right: 1rem;
 }
 
-.weightInput input, .dateInput input, .heightInput input, .ageInput input, .genderInput input, .exerciseInput input{
+.weightInput input, .dateInput input, .heightInput input, .ageInput input, .genderInput select, .exerciseInput select, #getRecipesButton, #caloriesInput {
     text-align: center;
     width: 10rem;
 }
 
-td, .weightInput, .dateInput, .heightInput, .ageInput, .genderInput, .exerciseInput {
+td, .weightInput, .dateInput, .heightInput, .ageInput, .genderInput, .exerciseInput, #caloriesInput {
     font-size: 1.25rem;
     color: var(--textColour);
 }
@@ -76,4 +75,23 @@ thead {
 .error{
     color: red;
     margin-left: 2rem;
+}
+
+.gridjs tr:last-child {
+    margin-bottom: 1.5rem;
+    display: table-row;
+    border-bottom: 2px solid #ccc;
+}
+  
+.recipes{
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: column;
+}
+
+.controls{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    /* flex-direction: row-reverse; */
 }

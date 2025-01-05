@@ -1,7 +1,6 @@
 import { Grid } from 'gridjs-react';
 import React from "react";
 
-
 const weightDataArray = JSON.parse(localStorage.getItem("weightData") || "[]");
 const UserData = JSON.parse(localStorage.getItem("userData") || "[]");
 let lastweight=0;
@@ -19,13 +18,7 @@ if(weightDataArray.length >= 1 && UserData.length >= 1 ){
   age=UserData[lastuser].age;
   gender=UserData[lastuser].gender;
   exercise=UserData[lastuser].exercise;
-  console.log(height)
 }
-
-
-console.log(UserData)
-console.log(weightDataArray)
-
 
 let bmr=0;
 let weightloss=0;
@@ -33,12 +26,7 @@ let mildloss=0;
 let loss=0;
 let extremeloss=0;
 
-
 function CalcGrid() {
-    
-      
-      
-        
       // bmr calculation
       if(gender==="male"){
         bmr=(9.99*weight)+(6.25*height)-(4.92*age)+5;
@@ -68,45 +56,24 @@ function CalcGrid() {
         extremeloss=(weightloss*0.67).toFixed();
       }
     const griddata= [
-        ['0 kg/week (maintain)', weightloss],
-        ['0.25 kg/week', mildloss],
-        ['0.5 kg/week', loss],
-        ['1 kg/week', extremeloss]
+        ['0 Kg/Week', weightloss],
+        ['0.25 Kg/Week', mildloss],
+        ['0.5 Kg/Week', loss],
+        ['1 Kg/Week', extremeloss]
       ]
     const style= {
-        container: {
-        
-            
-            'border-radius': '5px',
-            
-          },
-        table: {
-        
-          'border-bottom': '2px solid #ccc',
-          'width': '100%',
-          
-        },
         th: {
-          'background-color': 'rgba(0, 0, 0, 0.1)',
-          
           color: 'orange',
-          
           'border-bottom': '2px solid #ccc',
-          
         },
-        
-        
       }
     return (
-      <div>
-              
+      <div className='caloriesTable'>
         <Grid
           data={griddata}
           style={style}
           columns={['Weight reduction', 'Daily Calories']}
-          
         />
-        
       </div>
     );
   }

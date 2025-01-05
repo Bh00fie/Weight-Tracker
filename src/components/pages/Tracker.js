@@ -42,7 +42,7 @@ const Tracker = () => {
           "white",
         ],
         borderColor: "orange",
-        borderWidth: 2,
+        borderWidth: 4,
       },
     ],
   });
@@ -127,60 +127,62 @@ const Tracker = () => {
 
   
   return (
-    <div className="App">
-      <h1>Weight Tracker</h1>
-      <form>
-        <div className="weightInput">
-          <label htmlFor="NewWeight">Weight:</label>
-          <input
-            id="NewWeight"
-            type="number"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            placeholder="Kg"
-          />
-          {weightError && <span className="error">{weightError}</span>}
+    <div class="container">
+      <div class="row">
+        <h1>Weight Tracker</h1>
+        <form>
+          <div className="weightInput">
+            <label htmlFor="NewWeight">Weight:</label>
+            <input
+              id="NewWeight"
+              type="number"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
+              placeholder="Kg"
+            />
+            {weightError && <span className="error">{weightError}</span>}
+          </div>
+          <div className="dateInput">
+            <label htmlFor="NewDate">Date:</label>
+            <input
+              id="NewDate"
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+            {dateError && <span className="error">{dateError}</span>}
+          </div>
+          <br />
+          <button className="submitButton" onClick={submitData}>
+            Submit
+          </button>
+        </form>
+        <div className="lineChart">
+          <LineChart chartData={newChartData} />
         </div>
-        <div className="dateInput">
-          <label htmlFor="NewDate">Date:</label>
-          <input
-            id="NewDate"
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-          {dateError && <span className="error">{dateError}</span>}
-        </div>
-        <br />
-        <button className="submitButton" onClick={submitData}>
-          Submit
-        </button>
-      </form>
-      <div className="lineChart">
-        <LineChart chartData={newChartData} />
-      </div>
-      {weightData.length > 0 && (
-      <table>
-        <thead>
-          <tr className="tableHeader">
-            <th>Date:</th>
-            <th>Weight:</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {weightData.map((data, index) => (
-            <tr key={index} className="tableBody">
-              <td>{data.date}</td>
-              <td>{data.weight} Kg</td>
-              <td>
-                <button className="removeButton" onClick={() => removeData(index)}>Remove</button>
-              </td>
+        {weightData.length > 0 && (
+        <table>
+          <thead>
+            <tr className="tableHeader">
+              <th>Date:</th>
+              <th>Weight:</th>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      )}
+          </thead>
+          <tbody>
+            {weightData.map((data, index) => (
+              <tr key={index} className="tableBody">
+                <td>{data.date}</td>
+                <td>{data.weight} Kg</td>
+                <td>
+                  <button className="removeButton" onClick={() => removeData(index)}>Remove</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        )}
+      </div>
     </div>
   );
 };

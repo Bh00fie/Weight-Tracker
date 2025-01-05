@@ -78,90 +78,69 @@ function Calculator() {
   }
   return (
     <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-    <h1>Calorie Calculator</h1>
-    <form id="calorieForm">
-      <div className="heightInput">
-        <label htmlFor="NewHeight">Height:</label>
-        <input id="NewHeight"
-        type="number"
-        value={height}
-        onChange={(e) => setHeight(e.target.value)}
-        placeholder=""
-        />
-      </div>
-      <div className="ageInput">
-        <label htmlFor="NewAge">Age</label>
-        <input id="NewAge"
-        type="number"
-        value={age}
-        onChange={(e) => setAge(e.target.value)}
-        placeholder=""
-        />
-      </div>
+      <div class="row">
+        <div>
+          <h1>Calorie Calculator</h1>
+          <form id="calorieForm">
+            <div className="heightInput">
+              <label htmlFor="NewHeight">Height:</label>
+              <input id="NewHeight"
+              type="number"
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+              placeholder=""
+              />
+            </div>
+            <div className="ageInput">
+              <label htmlFor="NewAge">Age:</label>
+              <input id="NewAge"
+              type="number"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+              placeholder=""
+              />
+            </div>
+            <div className="genderInput">
+              <label htmlFor="NewGender">Gender:</label>
+              <select onChange={(e) => setGender(e.target.value)} id="NewGender"> 
+                  <option value="male">---</option>          
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+              </select>
+            </div>
+            <div className="exerciseInput">
+              <label htmlFor="NewExercise">Exercise amount:</label>
+              <select onChange={(e) => setExercise(e.target.value)} id="NewExercise"> 
+                  <option value="no-exercise">---</option>           
+                  <option value="no-exercise">No exercise</option>
+                  <option value="light-exercise">Light</option>
+                  <option value="moderate-exercise">Moderate</option>
+                  <option value="heavy-exercise">Heavy</option>
+              </select>
+            </div>
+            <br></br>
+            <button className="submitButton" onClick={submitData}>Submit</button>
+          </form>
+        </div>
 
-      <div className="genderInput">
-        <label htmlFor="NewGender">Gender</label>
-        {/* <input id="NewGender"
-        type="text"
-        value={age}
-        onChange={(e) => setAge(e.target.value)}
-        placeholder=""
-        /> */}
-        <select onChange={(e) => setGender(e.target.value)} id="NewGender"> 
-            <option value="male">---</option>          
-            <option value="male">male</option>
-            <option value="female">female</option>
-        </select>
+        <CalcGrid/>
 
-      </div>
-      <div className="exerciseInput">
-        <label htmlFor="NewExercise">Exercise amount</label>
-        {/* <input id="NewGender"
-        type="text"
-        value={age}
-        onChange={(e) => setAge(e.target.value)}
-        placeholder=""
-        /> */}
-        <select onChange={(e) => setExercise(e.target.value)} id="NewExercise"> 
-            <option value="no-exercise">---</option>           
-            <option value="no-exercise">No exercise</option>
-            <option value="light-exercise">Light exercise</option>
-            <option value="moderate-exercise">Moderate exercise</option>
-            <option value="heavy-exercise">Heavy exercise</option>
-        </select>
-      </div>
-      <br></br>
-      <button className="submitButton" onClick={submitData}>Submit</button>
-    </form>
-    </div>
-    <div class="col-sm-12 p-0">
-    
-    <CalcGrid/>
-    
-    </div>
-    <div class="recipes col-sm-12">
-    <div className="App">
-      <section className="controls">
-        <input
-          type="number"
-          placeholder="Input calories for your desired weight loss"
-          onChange={handleChange}
-        />
-        
-        <button onClick={getMealData}>Get Daily Meal Plan</button>
-      </section>
-      {mealData && <MealList mealData={mealData} />}
-    </div>
-      
-             
+        <div class="recipes">
+          <h1>Recipes Finder</h1>
+          <section className="controls">
+            <input
+              type="number"
+              placeholder="Calories Input"
+              onChange={handleChange}
+              id="caloriesInput"
+            />
+            <button id="getRecipesButton" onClick={getMealData}>Get recipes!</button>
+          </section>
+        {mealData && <MealList mealData={mealData} />}
       </div>
     </div>
   </div>
-
   );
-  
 }
 
 export default Calculator;
