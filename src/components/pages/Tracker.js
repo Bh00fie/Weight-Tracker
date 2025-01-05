@@ -93,7 +93,6 @@ const Tracker = () => {
     } else {
       setDateError("");
     }
-
     return isValid;
   }
   

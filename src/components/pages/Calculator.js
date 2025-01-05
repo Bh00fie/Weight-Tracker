@@ -11,7 +11,7 @@ const currentUserData = {
 
 function Calculator() {
   const [mealData, setMealData] = useState(null);
-  const [calories, setCalories] = useState(2000);
+  const [calories, setCalories] = useState(500);
   
   const [age, setAge] = useState(() => {
     const savedAge = localStorage.getItem("age");
@@ -33,6 +33,11 @@ function Calculator() {
     const initialValue = JSON.parse(savedExercise);
     return initialValue || "";
   });
+
+    const [ageError, setAgeError] = useState("");
+    const [heightError, setHeightError] = useState("");
+    const [genderError, setGenderError] = useState("");
+    const [exerciseError, setExerciseError] = useState("");
 
   function getMealData() {
     fetch(
@@ -69,12 +74,46 @@ function Calculator() {
     setCalories(e.target.value);
   }
 
-  function submitData() {
- 
-    const userDataArray = JSON.parse(localStorage.getItem("userData") || "[]");
-    userDataArray.push(currentUserData);
-    localStorage.setItem("userData", JSON.stringify(userDataArray));
-    
+  function validateForm() {
+    let isValid = true;
+    if (!age) {
+      setAgeError("This field is required!");
+      isValid = false;
+    } else {
+      setAgeError("");
+    }
+    if (!height) {
+      setHeightError("This field is required!");
+      isValid = false;
+    } else {
+      setHeightError("");
+    }
+    if (!gender) {
+      setGenderError("This field is required!");
+      isValid = false;
+    } else {
+      setGenderError("");
+    }
+    if (!exercise) {
+      setExerciseError("This field is required!");
+      isValid = false;
+    } else {
+      setExerciseError("");
+    }
+
+    return isValid;
+  }
+
+  function submitData(e) {
+    e.preventDefault();
+
+    if(validateForm()){
+      if(currentUserData.age !== "" && currentUserData.height !== "" && currentUserData.gender !== "" && currentUserData.exercise !== ""){
+        const userDataArray = JSON.parse(localStorage.getItem("userData") || "[]");
+        userDataArray.push(currentUserData);
+        localStorage.setItem("userData", JSON.stringify(userDataArray));
+      }
+    }
   }
   return (
     <div class="container">
@@ -86,40 +125,56 @@ function Calculator() {
               <label htmlFor="NewHeight">Height:</label>
               <input id="NewHeight"
               type="number"
+              min="1"
               value={height}
-              onChange={(e) => setHeight(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value === "" || parseInt(value) >= 1) {
+                  setHeight(value);
+                }
+              }}
               placeholder=""
               />
+              {heightError && <span className="error">{heightError}</span>}
             </div>
             <div className="ageInput">
               <label htmlFor="NewAge">Age:</label>
               <input id="NewAge"
               type="number"
+              min="1"
               value={age}
-              onChange={(e) => setAge(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value === "" || parseInt(value) >= 1) {
+                  setAge(value);
+                }
+              }}
               placeholder=""
               />
+              {ageError && <span className="error">{ageError}</span>}
             </div>
             <div className="genderInput">
               <label htmlFor="NewGender">Gender:</label>
               <select onChange={(e) => setGender(e.target.value)} id="NewGender"> 
-                  <option value="male">---</option>          
+                  <option value="">---</option>          
                   <option value="male">Male</option>
                   <option value="female">Female</option>
               </select>
+              {genderError && <span className="error">{genderError}</span>}
             </div>
             <div className="exerciseInput">
               <label htmlFor="NewExercise">Exercise amount:</label>
               <select onChange={(e) => setExercise(e.target.value)} id="NewExercise"> 
-                  <option value="no-exercise">---</option>           
+                  <option value="">---</option>           
                   <option value="no-exercise">No exercise</option>
                   <option value="light-exercise">Light</option>
                   <option value="moderate-exercise">Moderate</option>
                   <option value="heavy-exercise">Heavy</option>
               </select>
+              {exerciseError && <span className="error">{exerciseError}</span>}
             </div>
             <br></br>
-            <button className="submitButton" onClick={submitData}>Submit</button>
+            <button type="button" className="submitButton" onClick={submitData}>Submit</button>
           </form>
         </div>
 
@@ -134,7 +189,7 @@ function Calculator() {
               onChange={handleChange}
               id="caloriesInput"
             />
-            <button id="getRecipesButton" onClick={getMealData}>Get recipes!</button>
+            <button type="button" id="getRecipesButton" onClick={getMealData}>Get recipes!</button>
           </section>
         {mealData && <MealList mealData={mealData} />}
       </div>
