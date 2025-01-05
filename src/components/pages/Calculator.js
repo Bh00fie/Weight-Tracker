@@ -71,8 +71,14 @@ function Calculator() {
   }, [exercise]);
 
   function handleChange(e) {
-    setCalories(e.target.value);
-  }
+    const value = e.target.value;
+    if (value === "" || parseInt(value) >= 1) {
+      setCalories(value);
+    } else {
+      setCalories("");
+      setMealData(null); // Clear meal data
+    }
+  }  
 
   function validateForm() {
     let isValid = true;
@@ -123,33 +129,39 @@ function Calculator() {
           <form id="calorieForm">
             <div className="heightInput">
               <label htmlFor="NewHeight">Height:</label>
-              <input id="NewHeight"
-              type="number"
-              min="1"
-              value={height}
-              onChange={(e) => {
-                const value = e.target.value;
-                if (value === "" || parseInt(value) >= 1) {
-                  setHeight(value);
-                }
-              }}
-              placeholder=""
+              <input
+                id="NewHeight"
+                type="number"
+                min="1"
+                value={height}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === "" || parseInt(value) >= 1) {
+                    setHeight(value);
+                  } else {
+                    setHeight("");
+                  }
+                }}
+                placeholder=""
               />
               {heightError && <span className="error">{heightError}</span>}
             </div>
             <div className="ageInput">
               <label htmlFor="NewAge">Age:</label>
-              <input id="NewAge"
-              type="number"
-              min="1"
-              value={age}
-              onChange={(e) => {
-                const value = e.target.value;
-                if (value === "" || parseInt(value) >= 1) {
-                  setAge(value);
-                }
-              }}
-              placeholder=""
+              <input
+                id="NewAge"
+                type="number"
+                min="1"
+                value={age}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === "" || parseInt(value) >= 1) {
+                    setAge(value);
+                  } else {
+                    setAge("");
+                  }
+                }}
+                placeholder=""
               />
               {ageError && <span className="error">{ageError}</span>}
             </div>
